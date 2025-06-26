@@ -4,20 +4,14 @@ import MenuList from "@components/menu/MenuList";
 import { JSX } from "react";
 import Forms from "@components/ui/forms/Forms";
 import Location from "@components/Location";
-
-export function MainLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <section className="px-12 lg:px-32 xl:px-40 2xl:px-80">{children}</section>
-  );
-}
+import { MainLayout } from "./MainLayout";
 
 const mainPageSections: JSX.Element[] = [
-  <MenuList />, <AboutUs/>, <Location />, <Forms />
-]
+  <MenuList key="menu" />, 
+  <AboutUs key="about" />, 
+  <Location key="location" />, 
+  <Forms key="forms" />
+];
 
 export default function Home() {
   return (

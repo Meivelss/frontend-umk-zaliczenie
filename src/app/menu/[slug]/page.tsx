@@ -6,14 +6,19 @@ type Params = {
   slug: string
 }
 
+interface PageProps {
+  params: Promise<Params>;
+}
+
 export async function generateStaticParams(): Promise<Params[]> {
   return menuPositions.map(position => ({
     slug: position.slug
   }));
 }
 
-export default async function MenuEntryPage({ params }: { params: { slug: string } }) {
-  const position = menuPositions.find(p => p.slug === params.slug);
+export default async function MenuEntryPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const position = menuPositions.find(p => p.slug === resolvedParams.slug);
 
   if (!position) return notFound();
 
