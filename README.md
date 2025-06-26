@@ -5,7 +5,7 @@ Link do wersji live: https://tnaf.hirundo.re/
 
 -----
 # Technologie
-Język: TypeScript
-Frameworki: React + NextJS
-Build tool: Vite
-Inne: Tailwind v4, Nodemailer, Lucide
+- Język: TypeScript
+- Frameworki: React + NextJS
+- Build tool: Vite
+- Inne: Tailwind v4, Nodemailer, Lucide
